@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ArrowDownRight, ArrowRight, Check, Menu, ShieldCheck, X } from "lucide-react";
 import {
   AnimatePresence, motion, useReducedMotion,
-  useScroll, useTransform, useSpring, useMotionValue,
+  useScroll, useTransform, useSpring, useMotionValue, Variants,
 } from "motion/react";
 import { useEffect, useState } from "react";
 
@@ -29,9 +29,9 @@ const trustItems = [
 
 /* ─── shared easing + variants ───────────────────────────────────────────── */
 const ease      = [0.22, 1, 0.36, 1] as const;
-const fade      = { hidden: { opacity: 0, y: 32              }, show: { opacity: 1, y: 0              } };
-const blurUp    = { hidden: { opacity: 0, y: 24, filter: "blur(12px)" }, show: { opacity: 1, y: 0, filter: "blur(0px)" } };
-const fromLeft  = { hidden: { opacity: 0, x: -60             }, show: { opacity: 1, x: 0              } };
+const fade: Variants      = { hidden: { opacity: 0, y: 32              }, show: { opacity: 1, y: 0              } };
+const blurUp: Variants    = { hidden: { opacity: 0, y: 24, filter: "blur(12px)" }, show: { opacity: 1, y: 0, filter: "blur(0px)" } };
+const fromLeft: Variants  = { hidden: { opacity: 0, x: -60             }, show: { opacity: 1, x: 0              } };
 
 /* ─── Scroll progress bar ─────────────────────────────────────────────────── */
 function ScrollProgress() {
@@ -86,7 +86,7 @@ function Button({
 
 /* ─── Scroll-triggered reveal ─────────────────────────────────────────────── */
 type RevealV = "fade" | "blur" | "left" | "right";
-const vMap: Record<RevealV, typeof fade> = {
+const vMap: Record<RevealV, Variants> = {
   fade, blur: blurUp, left: fromLeft,
   right: { hidden: { opacity: 0, x: 60 }, show: { opacity: 1, x: 0 } },
 };
