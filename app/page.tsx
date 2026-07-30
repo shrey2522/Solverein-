@@ -526,6 +526,111 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* ── Partners & Integrations ─────────────────────────────────────── */}
+      <section className="partners section">
+        <Reveal v="blur" className="partners-header">
+          <p className="eyebrow">Integrated Infrastructure</p>
+          <SplitHeading text="Built on industry-leading health standards and trusted verification." />
+        </Reveal>
+
+        <motion.div
+          className="partners-grid"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.14 } },
+          }}
+        >
+          {/* Flexpa */}
+          <motion.div
+            className="partner-card"
+            variants={{
+              hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+              show:   { opacity: 1, y: 0,  filter: "blur(0px)", transition: { duration: 0.65, ease } },
+            }}
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 280, damping: 22 }}
+          >
+            <div className="partner-logo-wrap">
+              <svg viewBox="0 0 190 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="partner-svg flexpa-svg">
+                <g fill="currentColor">
+                  <rect x="2" y="6" width="9" height="9" rx="1.5" />
+                  <rect x="14" y="6" width="9" height="9" rx="1.5" />
+                  <rect x="2" y="18" width="9" height="9" rx="1.5" />
+                  <rect x="2" y="30" width="9" height="9" rx="1.5" />
+                  <rect x="14" y="18" width="9" height="9" rx="1.5" />
+                  <text x="34" y="32" fontFamily="Inter, var(--font-inter), sans-serif" fontSize="28" fontWeight="600" letterSpacing="-0.03em">Flexpa</text>
+                </g>
+              </svg>
+            </div>
+            <div className="partner-info">
+              <span className="partner-label">Health Data Access</span>
+              <p>Direct patient data access and standardized FHIR infrastructure.</p>
+            </div>
+          </motion.div>
+
+          {/* CLEAR */}
+          <motion.div
+            className="partner-card"
+            variants={{
+              hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+              show:   { opacity: 1, y: 0,  filter: "blur(0px)", transition: { duration: 0.65, ease } },
+            }}
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 280, damping: 22 }}
+          >
+            <div className="partner-logo-wrap">
+              <svg viewBox="0 0 200 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="partner-svg clear-svg">
+                <g fill="currentColor">
+                  <circle cx="18" cy="22" r="2.2" />
+                  <circle cx="18" cy="12" r="1.6" /><circle cx="18" cy="32" r="1.6" />
+                  <circle cx="8"  cy="22" r="1.6" /><circle cx="28" cy="22" r="1.6" />
+                  <circle cx="11" cy="15" r="1.6" /><circle cx="25" cy="29" r="1.6" />
+                  <circle cx="11" cy="29" r="1.6" /><circle cx="25" cy="15" r="1.6" />
+                  <circle cx="18" cy="6"  r="1.2" /><circle cx="18" cy="38" r="1.2" />
+                  <circle cx="2"  cy="22" r="1.2" /><circle cx="34" cy="22" r="1.2" />
+                  <circle cx="7"  cy="11" r="1.2" /><circle cx="29" cy="33" r="1.2" />
+                  <circle cx="7"  cy="33" r="1.2" /><circle cx="29" cy="11" r="1.2" />
+                  <text x="48" y="29" fontFamily="Inter, var(--font-inter), sans-serif" fontSize="21" fontWeight="700" letterSpacing="0.22em">CLEAR</text>
+                </g>
+              </svg>
+            </div>
+            <div className="partner-info">
+              <span className="partner-label">Identity Verification</span>
+              <p>Secure identity proofing for seamless healthcare access.</p>
+            </div>
+          </motion.div>
+
+          {/* SBA Veteran-Owned Certified */}
+          <motion.div
+            className="partner-card"
+            variants={{
+              hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+              show:   { opacity: 1, y: 0,  filter: "blur(0px)", transition: { duration: 0.65, ease } },
+            }}
+            whileHover={{ y: -6 }}
+            transition={{ type: "spring", stiffness: 280, damping: 22 }}
+          >
+            <div className="partner-logo-wrap">
+              <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="partner-svg sba-svg">
+                <rect x="2" y="2" width="156" height="76" rx="5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                <rect x="6" y="6" width="148" height="68" rx="3" stroke="currentColor" strokeWidth="0.75" strokeDasharray="3 2" fill="none"/>
+                <text x="80" y="27" textAnchor="middle" fontFamily="Inter, var(--font-inter), sans-serif" fontSize="16" fontWeight="800" fill="currentColor" letterSpacing="0.1em">SBA</text>
+                <text x="80" y="37" textAnchor="middle" fontFamily="Inter, var(--font-inter), sans-serif" fontSize="5.5" fontWeight="600" fill="currentColor" letterSpacing="0.05em">U.S. Small Business Administration</text>
+                <rect x="12" y="43" width="136" height="23" rx="2.5" fill="currentColor"/>
+                <text x="80" y="58" textAnchor="middle" fontFamily="Inter, var(--font-inter), sans-serif" fontSize="7.5" fontWeight="700" fill="var(--ivory)" letterSpacing="0.07em">VETERAN-OWNED CERTIFIED</text>
+              </svg>
+            </div>
+            <div className="partner-info">
+              <span className="partner-label">Federal Accreditation</span>
+              <p>Official Veteran-Owned Small Business certification by U.S. SBA.</p>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
       {/* ── Flow ──────────────────────────────────────────────────────────── */}
       <section className="flow section">
         <Reveal v="blur">
