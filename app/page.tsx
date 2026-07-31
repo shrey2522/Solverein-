@@ -41,10 +41,17 @@ function ScrollProgress() {
 }
 
 /* ─── Brand ───────────────────────────────────────────────────────────────── */
-function Brand() {
+function Brand({ variant = "dark" }: { variant?: "dark" | "light" }) {
+  const isLight = variant === "light";
   return (
     <a className="brand" href="#top" aria-label="Solverein home">
-      <Image src="/images/LOGO1.png" alt="Solverein" width={702} height={196} priority />
+      <Image
+        src={isLight ? "/images/Solverein-white-text.svg" : "/images/Solverein-black-text.svg"}
+        alt="Solverein"
+        width={552}
+        height={147}
+        priority
+      />
     </a>
   );
 }
@@ -790,7 +797,7 @@ export default function Home() {
         transition={{ duration: 0.9, ease }}>
         <div className="footer-main">
           <div>
-            <Brand />
+            <Brand variant="light" />
             <p className="footer-tag">Health data solutions</p>
             <div className="socials">
               {(["Facebook", "Instagram", "LinkedIn"] as const).map((label, i) => (
